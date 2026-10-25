@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 108" role="img" aria-labelledby="title">
+  <title id="title">Landco Pacific</title>
+  <g transform="translate(55 49)" stroke="#b5a467" stroke-width="4" stroke-linecap="round">
+    <path d="M0-43v13M0 30v13M-43 0h13M30 0h13M-30-30l9 9M21 21l9 9M30-30l-9 9M-21 21l-9 9"/>
+    <path d="M-17-36-12-25M17-36 12-25M36-17 25-12M36 17 25 12M17 36 12 25M-17 36-12 25M-36 17-25 12M-36-17-25-12"/>
+    <circle r="17" fill="#b5a467" stroke="none"/><circle r="9" fill="none" stroke="#f8f7f2" stroke-width="2"/>
+  </g>
+  <text x="112" y="59" fill="#4c4c4c" font-family="Georgia,'Times New Roman',serif" font-size="48" letter-spacing="4">LANDCO</text>
+  <text x="117" y="86" fill="#555" font-family="Arial,sans-serif" font-size="17" letter-spacing="13">PACIFIC</text>
+</svg>

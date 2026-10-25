@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1068 668" role="img" aria-labelledby="title desc">
+  <title id="title">SuiteLine PH landing page preview</title>
+  <desc id="desc">A dark navy B2B prospecting funnel with an amber accent, the headline Reach Decision Makers, and a panel showing contacts by role.</desc>
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e1c2d"/><stop offset="1" stop-color="#09131f"/></linearGradient>
+    <pattern id="diagonals" width="48" height="48" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><path d="M0 0V48" stroke="#5b86b8" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="1068" height="668" fill="url(#hero)"/>
+  <rect y="62" width="1068" height="606" fill="url(#diagonals)" opacity=".46"/>
+  <path d="M0 62H1068" stroke="#233751"/>
+  <path d="M31 10h34v34H31z" fill="#f2a11c"/><path d="m48 18 10 17H38z" fill="#1a1204"/>
+  <text x="76" y="36" fill="#e9e5dd" font-family="Impact,'Arial Narrow',sans-serif" font-size="24" letter-spacing=".5">SUITELINE PH</text>
+  <g fill="#9aa8ba" font-family="Arial,sans-serif" font-size="15" letter-spacing="1"><text x="373" y="34">Data</text><text x="442" y="34">Process</text><text x="535" y="34">Packages</text><text x="635" y="34">FAQ</text></g>
+  <rect x="850" y="7" width="179" height="42" fill="none" stroke="#3a5070"/>
+  <text x="870" y="33" fill="#e9e5dd" font-family="Impact,'Arial Narrow',sans-serif" font-size="13" letter-spacing="1">← BACK TO PORTFOLIO</text>
+  <path d="M31 132h32" stroke="#f2a11c" stroke-width="3"/>
+  <text x="77" y="137" fill="#f2a11c" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="3">VERIFIED C-LEVEL CONTACTS, PHILIPPINES</text>
+  <g font-family="Impact,'Arial Narrow',sans-serif" font-size="103" letter-spacing="1">
+    <text x="31" y="258" fill="#e9e5dd">REACH</text>
+    <text x="31" y="356" fill="#e9e5dd">DECISION</text>
+    <text x="31" y="454" fill="none" stroke="#e9e5dd" stroke-width="2">MAKERS.</text>
+  </g>
+  <g fill="#9aa8ba" font-family="Arial,sans-serif" font-size="16">
+    <text x="31" y="505">Skip the gatekeepers. SuiteLine PH delivers verified CEO, founder and CFO</text>
+    <text x="31" y="532">contacts across the Philippines, cleaned and organized for outreach.</text>
+  </g>
+  <path d="M31 559h224v54H31z" fill="#f2a11c"/><text x="57" y="592" fill="#1a1204" font-family="Impact,'Arial Narrow',sans-serif" font-size="14" letter-spacing="1.5">GET A FREE SAMPLE  →</text>
+  <path d="M270 559h152v54H270z" fill="none" stroke="#3a5070"/><text x="294" y="592" fill="#e9e5dd" font-family="Impact,'Arial Narrow',sans-serif" font-size="14" letter-spacing="1.5">SEE THE DATA</text>
+  <rect x="699" y="338" width="331" height="252" fill="#122238" stroke="#233751"/>
+  <path d="M699 338h331" stroke="#f2a11c" stroke-width="4"/>
+  <text x="727" y="378" fill="#e9e5dd" font-family="Impact,'Arial Narrow',sans-serif" font-size="22">WHO IS ON THE LIST</text>
+  <text x="727" y="401" fill="#9aa8ba" font-family="Arial,sans-serif" font-size="12">Philippine contacts by role, 77 records</text>
+  <g font-family="Arial,sans-serif" font-size="13" fill="#e9e5dd">
+    <text x="727" y="443">CEO, founder</text><text x="727" y="479">CFO</text><text x="727" y="515">COO</text><text x="727" y="551">CTO, CMO, other</text>
+  </g>
+  <rect x="854" y="426" width="57" height="17" fill="#f2a11c"/><rect x="854" y="462" width="25" height="17" fill="#5b86b8"/><rect x="854" y="498" width="5" height="17" fill="#cfc8ba"/><rect x="854" y="534" width="7" height="17" fill="#5b86b8"/>
+  <g text-anchor="end" fill="#e9e5dd" font-family="Impact,'Arial Narrow',sans-serif" font-size="16"><text x="1001" y="442">47</text><text x="1001" y="478">21</text><text x="1001" y="514">4</text><text x="1001" y="550">5</text></g>
+</svg>

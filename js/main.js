@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const $ = s => document.querySelector(s);
-  Anim.split(document.querySelectorAll('[data-split]'));
   document.querySelectorAll('.reveal-load').forEach((el,i) => el.style.setProperty('--i', i));
-  Anim.reveal(); Anim.counters(); Anim.tilt(); Anim.magnetic();
+  Anim.reveal(); Anim.counters();
   const profileSwitch = $('#profileSwitch');
   const profileImage = profileSwitch.querySelector('img');
   profileSwitch.addEventListener('click', () => {
@@ -16,10 +15,41 @@ document.addEventListener('DOMContentLoaded', () => {
     profileImage.classList.add('is-switching');
   });
 
-  const bar = $('#progress'), links = [...document.querySelectorAll('.nav__links a[href^="#"]')];
-  addEventListener('scroll', () => { bar.style.width = (scrollY/(document.body.scrollHeight-innerHeight)*100) + '%'; }, {passive:true});
-  const spy = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) links.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#'+e.target.id)); }), {rootMargin:'-45% 0px -50% 0px'});
+  const bar = $('#progress'), navLinks = $('.sidebar .nav__links');
+  const links = [...navLinks.querySelectorAll('a[href^="#"]')];
+  const setActiveLink = link => {
+    if (!link) return;
+    links.forEach(item => item.classList.toggle('is-active', item === link));
+    navLinks.style.setProperty('--indicator-y', `${link.offsetTop - navLinks.offsetTop}px`);
+    navLinks.style.setProperty('--indicator-height', `${link.offsetHeight}px`);
+  };
+  if (links.length) setActiveLink(links[0]);
+  const navResizeObserver = 'ResizeObserver' in window ? new ResizeObserver(() => {
+    const active = links.find(link => link.classList.contains('is-active'));
+    if (active) setActiveLink(active);
+  }) : null;
+  navResizeObserver?.observe(navLinks);
+  let scrollFrame = 0;
+  addEventListener('scroll', () => {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      const range = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${range > 0 ? Math.min(1, scrollY / range) : 0})`;
+    });
+  }, {passive:true});
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) setActiveLink(links.find(link => link.getAttribute('href') === '#'+e.target.id));
+  }), {rootMargin:'-45% 0px -50% 0px'});
   document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
+  let resizeTimer = 0;
+  addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const active = links.find(link => link.classList.contains('is-active'));
+      if (active) setActiveLink(active);
+    }, 120);
+  }, {passive:true});
 
   const menu = $('#navLinks');
   const menuToggle = $('#burger');

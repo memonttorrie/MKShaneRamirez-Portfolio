@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manila Real Estate Lead Funnel | Ishean, Real Estate VA</title>
+<meta name="description" content="Qualified property leads and faster follow up for brokers and agents in Metro Manila.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10243E;--paper:#F3F6F8;--white:#fff;--blue:#1F5FBF;--gold:#F2B705;--teal:#2A9D8F;--line:#D5DDE5;--mute:#566679;--r:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+section{padding:88px 0}
+.lead{color:var(--mute);max-width:60ch;margin-top:14px}
+h2{font-size:clamp(28px,4vw,42px);max-width:20ch}
+.note{font-size:13px;color:var(--mute);margin-top:18px}
+.btn{display:inline-block;background:var(--blue);color:var(--white);padding:15px 26px;border-radius:var(--r);font-weight:700;text-decoration:none;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{background:var(--ink)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.alt:hover{background:var(--ink);color:var(--white)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(243,246,248,.94);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+nav a.btn{padding:9px 18px;font-size:15px}
+nav li a{text-decoration:none}
+nav li a:hover{text-decoration:underline}
+.portfolio-close{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;margin-left:10px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font:400 25px/1 var(--font-body);text-decoration:none;transition:transform .25s ease,background-color .2s,border-color .2s,color .2s}
+.portfolio-close:hover{transform:rotate(90deg);background:var(--ink);border-color:var(--ink);color:var(--white)}
+
+/* hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,5.6vw,66px);font-weight:800}
+.hero p{margin:22px 0 32px;max-width:46ch;font-size:19px;color:var(--mute)}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.funnel{display:flex;flex-direction:column;align-items:center;gap:8px}
+.funnel div{height:62px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;color:var(--white);font-weight:700;white-space:nowrap;overflow:hidden}
+.funnel b{font-family:"Bricolage Grotesque",sans-serif;font-size:22px}
+.funnel span{font-size:14px;font-weight:500;opacity:.92}
+.f1{width:100%;background:var(--ink)}
+.f2{width:80%;background:#1B4A8F}
+.f3{width:60%;background:var(--blue)}
+.f4{width:42%;background:var(--teal)}
+.f5{width:28%;background:var(--gold);color:var(--ink)!important;padding:0 12px!important}
+.f4 span,.f5 span{display:none}
+.funnel-cap{font-size:13px;color:var(--mute);text-align:center;margin-top:8px}
+
+/* stats */
+.stats{background:var(--ink);color:var(--white);padding:56px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.stats b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(34px,4vw,52px);color:var(--gold);line-height:1}
+.stats span{font-size:15px;opacity:.85;display:block;margin-top:8px}
+
+/* problem */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.split ul{list-style:none;display:grid;gap:14px}
+.split li{padding:18px 20px;background:var(--white);border-left:4px solid var(--gold);border-radius:0 var(--r) var(--r) 0}
+.split li b{display:block}
+
+/* charts */
+.charts{background:var(--white);border-block:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:44px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:30px}
+.card.wide{grid-column:1/-1}
+.card h3{font-size:22px;margin-bottom:6px}
+.card p.sub{color:var(--mute);font-size:15px;margin-bottom:22px}
+.bars{display:flex;align-items:flex-end;gap:14px;height:240px;border-bottom:2px solid var(--ink);padding-top:20px}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.bar i{display:block;width:100%;background:var(--blue);border-radius:6px 6px 0 0;position:relative}
+.bar.top i{background:var(--gold)}
+.bar em{font-style:normal;font-weight:700;font-size:14px;margin-bottom:6px}
+.labels{display:flex;gap:14px;margin-top:10px}
+.labels span{flex:1;text-align:center;font-size:13px;color:var(--mute)}
+.donut-wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.donut{width:190px;height:190px;border-radius:50%;flex:none;background:conic-gradient(var(--blue) 0 38%,var(--gold) 38% 65%,var(--ink) 65% 83%,var(--teal) 83% 94%,#9AA8B6 94% 100%);position:relative}
+.donut::after{content:"Lead sources";position:absolute;inset:34px;background:var(--paper);border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;text-align:center}
+.legend{list-style:none;display:grid;gap:8px;font-size:15px}
+.legend li{display:flex;align-items:center;gap:10px}
+.legend i{width:14px;height:14px;border-radius:3px;flex:none}
+.legend b{margin-left:auto;padding-left:18px}
+svg.line{width:100%;height:auto;display:block}
+.hbar{display:grid;grid-template-columns:130px 1fr 52px;align-items:center;gap:12px;margin:12px 0;font-size:15px}
+.hbar i{display:block;height:18px;background:var(--teal);border-radius:4px}
+.hbar b{text-align:right}
+
+/* analysis */
+.findings{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.findings article{border-top:3px solid var(--ink);padding-top:20px}
+.findings h3{font-size:21px;margin-bottom:10px}
+.findings p{color:var(--mute);font-size:16px}
+
+/* steps */
+.steps{background:var(--ink);color:var(--white)}
+.steps .lead{color:#B9C6D4}
+.steps ol{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:44px}
+.steps li{counter-increment:s;padding:22px 18px;border:1px solid #2F4766;border-radius:var(--r);font-size:15px;color:#C9D4E0}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;margin-bottom:14px}
+.steps li b{display:block;color:var(--white);font-size:18px;margin-bottom:6px;font-family:"Bricolage Grotesque",sans-serif}
+
+/* packages */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:32px;display:flex;flex-direction:column}
+.plan.pick{border:2px solid var(--blue)}
+.plan h3{font-size:24px}
+.plan .price{font-family:"Bricolage Grotesque",sans-serif;font-size:40px;font-weight:800;margin:10px 0 4px}
+.plan .price small{font-size:15px;font-weight:500;color:var(--mute)}
+.plan ul{list-style:none;margin:18px 0 26px;display:grid;gap:10px;font-size:15px;flex:1}
+.plan li{padding-left:24px;position:relative}
+.plan li::before{content:"";position:absolute;left:2px;top:.5em;width:10px;height:6px;border-left:3px solid var(--teal);border-bottom:3px solid var(--teal);transform:rotate(-45deg)}
+.plan .btn{text-align:center}
+
+/* areas */
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.areas span{padding:10px 18px;border:1px solid var(--ink);border-radius:999px;font-size:15px;background:var(--white)}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:20px 0;max-width:760px}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--blue)}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--mute);margin-top:12px;max-width:62ch}
+
+/* form */
+.signup{background:var(--blue);color:var(--white)}
+.signup .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.signup h2{max-width:14ch}
+.signup .lead{color:#DCE7F7}
+form{background:var(--white);color:var(--ink);padding:32px;border-radius:14px;display:grid;gap:16px}
+label{font-size:14px;font-weight:700;display:grid;gap:6px}
+input,select{font:inherit;padding:13px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+input:focus,select:focus{border-color:var(--blue);outline:none}
+form .btn{width:100%;margin-top:4px}
+form small{color:var(--mute);font-size:13px;text-align:center}
+
+footer{padding:36px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media(max-width:900px){
+ section{padding:64px 0}
+ nav ul{display:none}
+ .hero .wrap,.split,.signup .wrap,.grid,.findings,.plans{grid-template-columns:1fr}
+ .stats .wrap{grid-template-columns:repeat(2,1fr)}
+ .steps ol{grid-template-columns:1fr}
+ .card.wide{grid-column:auto}
+ .hbar{grid-template-columns:100px 1fr 46px}
+}
+.cursor-dot{display:none}
+.cursor-ring{position:fixed;top:0;left:0;z-index:9999;width:36px;height:36px;margin:-18px 0 0 -18px;border:1.5px solid #56606a;border-radius:50%;pointer-events:none;opacity:0;will-change:transform;mix-blend-mode:normal;scale:1;transition:opacity .25s ease,scale .28s cubic-bezier(.34,1.56,.64,1),background-color .28s ease,border-color .28s ease}
+.cursor-ring.is-link{scale:1.3;border-color:var(--blue);background:rgba(31,95,191,.1)}
+.cursor-ring.is-view{scale:1.55;border-color:var(--blue);background:rgba(31,95,191,.08)}
+body.has-cursor .cursor-dot,body.has-cursor .cursor-ring{opacity:1}
+body.has-cursor:not(.cursor-native),body.has-cursor:not(.cursor-native) *{cursor:none!important}
+@media (prefers-reduced-motion:reduce){.cursor-ring{transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="wrap">
+  <a class="logo" href="#top">Ishean</a>
+  <ul>
+   <li><a href="#market">Market data</a></li>
+   <li><a href="#process">Process</a></li>
+   <li><a href="#packages">Packages</a></li>
+   <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a class="btn" href="#signup">Get the report</a>
+  <a class="portfolio-close" href="../../index.html#projects" aria-label="Back to portfolio projects" title="Back to portfolio">×</a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="wrap">
+  <div>
+   <h1>Turn Manila property inquiries into booked viewings.</h1>
+   <p>I am a real estate virtual assistant for brokers and agents in Metro Manila. I capture, qualify and follow up every lead so you only talk to buyers who are ready.</p>
+   <div class="cta">
+    <a class="btn" href="#signup">Get the free lead report</a>
+    <a class="btn alt" href="#market">See the numbers</a>
+   </div>
+  </div>
+  <div>
+   <div class="funnel" role="img" aria-label="Funnel from 1,000 inquiries to 22 closed sales">
+    <div class="f1"><b>1,000</b><span>Inquiries</span></div>
+    <div class="f2"><b>420</b><span>Qualified</span></div>
+    <div class="f3"><b>180</b><span>Viewings</span></div>
+    <div class="f4"><b>45</b><span>Reserved</span></div>
+    <div class="f5"><b>22</b><span>Closed</span></div>
+   </div>
+   <p class="funnel-cap" style="margin-top:14px">Inquiries, qualified, viewings, reservations, closed sales</p>
+  </div>
+ </div>
+</header>
+
+<div class="stats">
+ <div class="wrap">
+  <div><b>5 min</b><span>Target first reply time</span></div>
+  <div><b>42%</b><span>Inquiries qualified</span></div>
+  <div><b>2.2%</b><span>Inquiry to closed sale</span></div>
+  <div><b>8</b><span>Metro Manila areas covered</span></div>
+ </div>
+</div>
+
+<section id="problem">
+ <div class="wrap split">
+  <div>
+   <h2>Most Manila leads go cold before anyone replies.</h2>
+   <p class="lead">Agents are on site visits, in traffic on EDSA or closing another deal. Messages sit unread and buyers move to the next listing.</p>
+  </div>
+  <ul>
+   <li><b>Slow replies</b>Buyers message several agents at once and the first useful answer usually wins.</li>
+   <li><b>Unqualified chats</b>Hours go to people with no budget, no timeline or no financing plan.</li>
+   <li><b>No follow up system</b>Warm leads fade because nobody sends the second and third message.</li>
+   <li><b>No numbers</b>Without tracking, you cannot tell which channel or area is paying off.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="charts" id="market">
+ <div class="wrap">
+  <h2>Metro Manila market snapshot and funnel analysis</h2>
+  <p class="lead">Charts below use sample figures to show the layout. Replace them with your own verified data before you publish.</p>
+
+  <div class="grid">
+   <div class="card wide">
+    <h3>Condo price per sqm by area</h3>
+    <p class="sub">Estimated average asking price in thousand pesos.</p>
+    <div class="bars">
+     <div class="bar top"><em>320</em><i style="height:100%"></i></div>
+     <div class="bar"><em>290</em><i style="height:90.6%"></i></div>
+     <div class="bar"><em>190</em><i style="height:59.4%"></i></div>
+     <div class="bar"><em>175</em><i style="height:54.7%"></i></div>
+     <div class="bar"><em>150</em><i style="height:46.9%"></i></div>
+     <div class="bar"><em>125</em><i style="height:39%"></i></div>
+    </div>
+    <div class="labels"><span>BGC</span><span>Makati CBD</span><span>Ortigas</span><span>Mandaluyong</span><span>Quezon City</span><span>Manila</span></div>
+   </div>
+
+   <div class="card">
+    <h3>Reply speed and conversion</h3>
+    <p class="sub">Share of inquiries that become viewings, by time to first reply.</p>
+    <svg class="line" viewBox="0 0 400 220" role="img" aria-label="Conversion falls from 21 percent at 5 minutes to 2 percent at 24 hours">
+     <line x1="30" y1="190" x2="390" y2="190" stroke="#10243E" stroke-width="2"/>
+     <polyline points="40,43 120,92 200,127 280,155 360,176" fill="none" stroke="#1F5FBF" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+     <g fill="#F2B705" stroke="#10243E" stroke-width="2">
+      <circle cx="40" cy="43" r="7"/><circle cx="120" cy="92" r="7"/><circle cx="200" cy="127" r="7"/><circle cx="280" cy="155" r="7"/><circle cx="360" cy="176" r="7"/>
+     </g>
+     <g font-size="14" font-weight="700" fill="#10243E" text-anchor="middle">
+      <text x="40" y="28">21%</text><text x="120" y="77">14%</text><text x="200" y="112">9%</text><text x="280" y="140">5%</text><text x="360" y="161">2%</text>
+     </g>
+     <g font-size="13" fill="#566679" text-anchor="middle">
+      <text x="40" y="212">5 min</text><text x="120" y="212">30 min</text><text x="200" y="212">1 hr</text><text x="280" y="212">4 hrs</text><text x="360" y="212">24 hrs</text>
+     </g>
+    </svg>
+   </div>
+
+   <div class="card">
+    <h3>Where leads come from</h3>
+    <p class="sub">Share of monthly inquiries by channel.</p>
+    <div class="donut-wrap">
+     <div class="donut" role="img" aria-label="Lead source split"></div>
+     <ul class="legend">
+      <li><i style="background:#1F5FBF"></i>Facebook and Instagram<b>38%</b></li>
+      <li><i style="background:#F2B705"></i>Property portals<b>27%</b></li>
+      <li><i style="background:#10243E"></i>Referrals<b>18%</b></li>
+      <li><i style="background:#2A9D8F"></i>Google search<b>11%</b></li>
+      <li><i style="background:#9AA8B6"></i>Walk ins<b>6%</b></li>
+     </ul>
+    </div>
+   </div>
+
+   <div class="card wide">
+    <h3>Funnel stage conversion</h3>
+    <p class="sub">Share of leads that reach the next stage.</p>
+    <div class="hbar"><span>Inquiry to qualified</span><i style="width:42%"></i><b>42%</b></div>
+    <div class="hbar"><span>Qualified to viewing</span><i style="width:43%"></i><b>43%</b></div>
+    <div class="hbar"><span>Viewing to reserved</span><i style="width:25%"></i><b>25%</b></div>
+    <div class="hbar"><span>Reserved to closed</span><i style="width:49%"></i><b>49%</b></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="analysis">
+ <div class="wrap">
+  <h2>What the numbers say</h2>
+  <p class="lead">Three patterns show up in most Metro Manila lead funnels.</p>
+  <div class="findings">
+   <article>
+    <h3>Speed beats price</h3>
+    <p>A reply inside five minutes converts about ten times better than a reply the next day. Fast, helpful answers matter more than the lowest price.</p>
+   </article>
+   <article>
+    <h3>Social drives volume</h3>
+    <p>Facebook and Instagram bring the most inquiries, but portal and referral leads often qualify faster. Track quality per channel, not only count.</p>
+   </article>
+   <article>
+    <h3>The viewing is the leak</h3>
+    <p>Only one in four viewings becomes a reservation. Pre viewing questions on budget, financing and timeline lift that rate before anyone visits the unit.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="steps" id="process">
+ <div class="wrap">
+  <h2>How the funnel works</h2>
+  <p class="lead">One system from first message to signed reservation.</p>
+  <ol>
+   <li><b>Capture</b>Landing page, form and chat inquiries land in one CRM.</li>
+   <li><b>Qualify</b>Budget, location, timeline and financing are confirmed within minutes.</li>
+   <li><b>Follow up</b>Scheduled messages keep warm leads active for 30 days.</li>
+   <li><b>Book</b>Qualified buyers get a viewing slot on your calendar.</li>
+   <li><b>Report</b>Weekly numbers show what each channel and area delivers.</li>
+  </ol>
+ </div>
+</section>
+
+<section id="areas">
+ <div class="wrap">
+  <h2>Areas covered across Metro Manila</h2>
+  <p class="lead">Lead handling is tuned to local buyer questions, price ranges and neighborhoods.</p>
+  <div class="areas">
+   <span>Makati</span><span>BGC, Taguig</span><span>Ortigas, Pasig</span><span>Mandaluyong</span><span>Quezon City</span><span>Manila City</span><span>Pasay and MOA</span><span>Alabang, Muntinlupa</span>
+  </div>
+ </div>
+</section>
+
+<section id="packages" style="background:var(--white);border-block:1px solid var(--line)">
+ <div class="wrap">
+  <h2>Pick the support level you need</h2>
+  <p class="lead">Sample rates in Philippine pesos. Adjust to your own pricing.</p>
+  <div class="plans">
+   <div class="plan">
+    <h3>Starter</h3>
+    <div class="price">₱8,000<small> per month</small></div>
+    <ul><li>Inbox and chat replies</li><li>Lead sheet and tagging</li><li>Monthly summary</li></ul>
+    <a class="btn alt" href="#signup">Start small</a>
+   </div>
+   <div class="plan pick">
+    <h3>Funnel</h3>
+    <div class="price">₱15,000<small> per month</small></div>
+    <ul><li>Everything in Starter</li><li>Lead qualification calls and chats</li><li>Follow up sequences</li><li>Viewing scheduling</li><li>Weekly funnel report</li></ul>
+    <a class="btn" href="#signup">Build my funnel</a>
+   </div>
+   <div class="plan">
+    <h3>Growth</h3>
+    <div class="price">₱25,000<small> per month</small></div>
+    <ul><li>Everything in Funnel</li><li>Listing posts and ad reporting</li><li>Dashboard in Excel or Sheets</li><li>Monthly strategy call</li></ul>
+    <a class="btn alt" href="#signup">Talk to me</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <h2>Questions agents ask</h2>
+  <div style="margin-top:36px">
+   <details><summary>Do you work with my existing CRM?</summary><p>Yes. I can work inside most CRMs or set up a simple sheet if you do not have one yet.</p></details>
+   <details><summary>Can you reply in Tagalog and English?</summary><p>Yes. Replies match how each buyer writes, whether English, Tagalog or Taglish.</p></details>
+   <details><summary>What hours do you cover?</summary><p>Weekday business hours in Manila time, with extended hours available on the Growth package.</p></details>
+   <details><summary>How soon will I see results?</summary><p>Faster replies show up in the first week. Conversion trends become clear after about a month of tracked data.</p></details>
+   <details><summary>What is in the free report?</summary><p>A short review of your current lead flow, response time and drop off points, with three fixes ranked by impact.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="signup" id="signup">
+ <div class="wrap">
+  <div>
+   <h2>Get your free Manila lead report</h2>
+   <p class="lead">Tell me about your listings and current inquiry volume. I will send a short funnel review within two working days.</p>
+  </div>
+  <form action="#" method="post">
+   <label>Full name<input type="text" name="name" autocomplete="name" required></label>
+   <label>Mobile or Viber number<input type="tel" name="phone" autocomplete="tel" required></label>
+   <label>Main area
+    <select name="area">
+     <option>Makati</option><option>BGC, Taguig</option><option>Ortigas, Pasig</option><option>Mandaluyong</option><option>Quezon City</option><option>Manila City</option><option>Pasay and MOA</option><option>Alabang, Muntinlupa</option>
+    </select>
+   </label>
+   <label>Your role
+    <select name="role"><option>Agent</option><option>Broker</option><option>Developer sales team</option><option>Property owner</option></select>
+   </label>
+   <label>Inquiries per month<input type="number" name="volume" min="0" placeholder="For example 60"></label>
+   <button class="btn" type="submit">Send my free report</button>
+   <small>No spam. Your details stay private.</small>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <span>Ishean, Real Estate Virtual Assistant. Rizal and Metro Manila, Philippines.</span>
+  <span>Sample data shown for layout only.</span>
+ </div>
+</footer>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel"></span></div>
+<script src="../../js/cursor.js"></script>
+</body>
+</html>

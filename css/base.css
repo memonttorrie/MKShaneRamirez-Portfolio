@@ -1,6 +1,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--font-body);transition:background .4s,color .4s;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--font-body);transition:background-color .3s var(--ease),color .3s var(--ease);overflow-x:hidden}
 h1,h2,h3{font-family:var(--font-display);line-height:1.05;letter-spacing:-.02em}
 h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:1.2rem}
 h3{font-size:1.4rem}
@@ -13,4 +13,4 @@ ul,ol{list-style:none}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
 .meta{color:var(--muted);font-size:.95rem}
 @media(max-width:760px){.two-col{grid-template-columns:1fr}}
-@media(hover:hover) and (pointer:fine){body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none}}
+@media(max-width:760px){.ambient-lines{opacity:.35}.ambient-lines__path{animation-duration:48s,30s}}

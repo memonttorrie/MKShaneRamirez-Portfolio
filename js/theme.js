@@ -12,23 +12,5 @@
   };
   let saved; try{saved = localStorage.getItem('theme')}catch(e){}
   set(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-  btn.addEventListener('click', () => {
-    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    if (typeof document.startViewTransition === 'function' && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      try {
-        const transition = document.startViewTransition(() => set(next));
-        transition.ready.catch(error => {
-          if (error.name !== 'AbortError' && error.name !== 'InvalidStateError') console.error('Theme transition failed.', error);
-        });
-        transition.finished.catch(error => {
-          if (error.name !== 'AbortError') console.error('Theme transition failed.', error);
-        });
-      } catch (error) {
-        set(next);
-        console.error('Theme transition failed.', error);
-      }
-    } else {
-      set(next);
-    }
-  });
+  btn.addEventListener('click', () => set(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 })();

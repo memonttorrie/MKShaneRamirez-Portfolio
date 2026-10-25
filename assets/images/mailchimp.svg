@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 82" role="img" aria-labelledby="title">
+<title id="title">Mailchimp</title>
+<g transform="translate(4 4)" stroke="#171717" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M15 46C18 24 35 8 54 9c8 0 13 5 18 11 10-3 22 0 27 8 4 7 1 15-5 20 6 5 9 12 7 20-3 11-14 16-27 16H43C25 84 10 72 10 59c0-5 2-9 5-13Z" fill="#fff"/>
+  <path d="M15 47C12 32 22 17 37 10c9-4 17 1 23 8 8-2 17-1 23 3 7 5 8 12 3 18-8 8-21 6-31 4-13-3-25-1-34 8Z" fill="#171717"/>
+  <path d="M28 45c5-12 16-18 29-18 14 0 27 8 31 21 3 12-5 23-18 28-16 6-35 1-42-10-4-6-4-14 0-21Z" fill="#fff"/>
+  <path d="M12 47C2 48 1 63 11 68c4 2 9 1 12-2M89 46c11 0 14 14 5 20-3 2-8 2-12 0" fill="#fff"/>
+  <path d="M39 49c3-3 7-3 10 0M65 49c3-3 7-3 10 0" fill="none"/>
+  <circle cx="45" cy="54" r="2" fill="#171717" stroke="none"/><circle cx="70" cy="54" r="2" fill="#171717" stroke="none"/>
+  <path d="M42 63c8 8 23 9 32 1-9 3-20 2-32-1Z" fill="#fff"/>
+  <path d="M53 34c4-5 10-7 16-6M39 28l-4-7 10 4" fill="none"/>
+</g>
+<text x="120" y="60" fill="#171717" font-family="Arial,Helvetica,sans-serif" font-size="48" font-weight="800" letter-spacing="-2.3">mailchimp</text>
+</svg>

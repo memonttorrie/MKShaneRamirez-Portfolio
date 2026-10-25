@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 108" role="img" aria-labelledby="title">
+  <title id="title">Prince Jun Development Corporation</title>
+  <g fill="none" stroke="#4a4a4a" stroke-width="3">
+    <path d="M14 12h94v83H14zM20 18h81v71H20zM14 101h99M109 10v94"/>
+    <path d="M29 26 46 38M65 26l15 11M37 87V47h18v40M66 43h28v36H66z"/>
+    <path d="M73 48v26m7-26v26m7-26v26m7-26v26" stroke-width="2"/>
+  </g>
+  <text x="127" y="58" fill="#484848" font-family="Georgia,'Times New Roman',serif" font-size="42" letter-spacing="1">PRINCE JUN</text>
+  <path d="M127 67h300" stroke="#555" stroke-width="3"/>
+  <text x="128" y="91" fill="#4a4a4a" font-family="Georgia,'Times New Roman',serif" font-size="17" letter-spacing="2.4">DEVELOPMENT CORPORATION</text>
+</svg>

@@ -1,15 +1,17 @@
 /* Single place to tune the look. Replace values to match your reference exactly. */
 :root{
-  --bg:#F5F6F2; --surface:#FFFFFF; --ink:#10203C; --muted:#68778D; --line:#DCE2E8;
-  --accent:#1468C5; --accent-ink:#FFFFFF; --surface-soft:#EDF3FF;
-  --orange:#F07824; --violet:#7556D8; --blue:#1677D2; --black:#101827;
+  --bg:#F4F4ED; --surface:#FBFBF7; --ink:#0B1E3F; --muted:#5A6479; --line:#7D899C;
+  --accent:#0059B3; --accent-ink:#FFFFFF; --surface-soft:#EEF3FA;
+  --orange:#B45110; --violet:#65779A; --blue:#2C84DD; --black:#060C1A;
+  --ink-rgb:11,30,63; --accent-rgb:0,89,179;
   --font-display:'Bricolage Grotesque',system-ui,sans-serif;
   --font-body:'DM Sans',system-ui,sans-serif;
-  --radius:16px; --ease:cubic-bezier(.22,.8,.2,1); --dur:.7s;
-  --max:1120px; --pad:clamp(20px,5vw,56px); --sidebar-width:286px; --sidebar-collapsed-width:82px;
+  --radius:16px; --ease:cubic-bezier(.22,1,.36,1); --ease-spring:cubic-bezier(.34,1.56,.64,1); --dur:.32s;
+  --max:1120px; --pad:clamp(20px,5vw,56px); --sidebar-width:240px; --sidebar-collapsed-width:72px;
 }
 [data-theme="dark"]{
-  --bg:#101827; --surface:#172338; --ink:#F0F4FB; --muted:#9CAAC1; --line:#2A3850;
-  --accent:#77B8FF; --accent-ink:#10203C; --surface-soft:#1C2D49;
-  --orange:#FF9952; --violet:#A48BFF; --blue:#67ACFF; --black:#080E1A;
+  --bg:#070B14; --surface:#0B1120; --ink:#EDF0F6; --muted:#AEB9CB; --line:#66748B;
+  --accent:#2B78C5; --accent-ink:#FFFFFF; --surface-soft:#0E1626;
+  --orange:#FF9952; --violet:#93A4D0; --blue:#5AA2E8; --black:#04070F;
+  --ink-rgb:237,240,246; --accent-rgb:43,120,197;
 }

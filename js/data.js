@@ -1,7 +1,7 @@
 /* All editable content lives here. */
 window.DATA = {
   skills: [["Python (pandas, scikit-learn)",85],["Data cleaning and visualization",85],["Microsoft Excel",90],["NLP and text classification",70],["PyTorch",65],["MySQL",65],["Power BI",60],["Model evaluation (F1, confusion matrix)",75]],
-  tools: ["Hugging Face","Matplotlib","Google Workspace","Microsoft 365","HubSpot","Canva"],
+  tools: ["Slack","Visual Studio Code","Hugging Face","Canva","HubSpot","Google Workspace","MySQL","Excel","Power BI","Supabase","Apify Console","Apollo","Mailchimp"],
   soft: [["Customer communication","5.0","Built through customer service and client-facing work."],["Outbound sales","4.8","Experience with outbound sales accounts and outreach."],["Lead generation","4.0","Finding prospects and maintaining organized lead pipelines."],["Coordination","4.8","Coordinating schedules, records, and follow-up across work."]],
   projects: [
     ["NLP","Taglish Real Estate Text Classification","Classified Taglish listings into 4 property types and buyer inquiries into 3 sentiment classes. Compared TF-IDF with Logistic Regression and SVM against fine-tuned XLM-RoBERTa.",["Python","scikit-learn","PyTorch","Hugging Face"]],
@@ -9,7 +9,10 @@ window.DATA = {
     ["Signal processing","Face Detection with DSP Enhancement","Improved detection stability in a real-time detector using Gaussian, median, and FFT filters on noisy frames.",["OpenCV","FFT","DNN"]],
     ["Predictive modeling","Student Performance Prediction","Early-warning model to flag first-year students who need a tutor, comparing Linear Regression, Logistic Regression, and KNN.",["Regression","KNN","Survey data"]],
     ["Excel analytics","Real Estate Leads Database","Multi-sheet leads database with analysis sheets and charts, built on synthetic US and Australian market data.",["Excel","Charts"]],
-    ["Thesis","AI Textile Sorting","Thesis Team Leader on a computer vision system that classifies post-consumer garments for reuse or recycling.",["Computer vision","Classification"]]
+    ["Thesis","AI Textile Sorting","Thesis Team Leader on a computer vision system that classifies post-consumer garments for reuse or recycling.",["Computer vision","Classification"]],
+    ["Property inquiry funnel","Real Estate Lead Funnel","A property-sales funnel for a Metro Manila real-estate virtual assistant, showing how buyer inquiries move toward qualification, viewings, and reservations.",["HTML","CSS","Responsive UI"],"projects/real-estate-funnel/index.html"],
+    ["B2B prospecting funnel","SuiteLine PH Funnel","A B2B outbound prospecting funnel for Philippine sales teams, presenting executive contact-list packages and a free sample request.",["HTML","CSS","Conversion design"],"projects/suiteline-ph-funnel/index.html"],
+    ["Sales analytics","Funnelcast · US Sales Funnel & Forecast","Interactive funnel prototype showing a 146-prospect US sample, lead-stage conversion, contact coverage, and an editable revenue forecast against an annual target.",["HTML","CSS","JavaScript","Forecasting"],"projects/funnelcast/index.html"]
   ],
   futureProjects: [
     ["DATA VISUALIZATION","Interactive Analytics Dashboard","A clean dashboard that turns a real-world dataset into a few useful, explorable insights.",["Python","Power BI","Storytelling"]],
@@ -37,7 +40,9 @@ window.DATA = {
       ["Administrative Professional Foundations","LinkedIn Learning","assets/certs/LinkedIn_Administrative_Professional_Foundations.pdf"],
       ["Advanced Lead Generation","LinkedIn Learning","assets/certs/LinkedIn_Advanced_Lead_Generation.pdf"],
       ["Note Taking for Business Professionals","LinkedIn Learning","assets/certs/LinkedIn_Note_Taking_for_Business_Professionals.pdf"],
-      ["Sales Strategies and Approaches","LinkedIn Learning","assets/certs/LinkedIn_Sales_Strategies_and_Approaches.pdf"]
+      ["Sales Strategies and Approaches","LinkedIn Learning","assets/certs/LinkedIn_Sales_Strategies_and_Approaches.pdf"],
+      ["Career Essentials in Administrative Assistance","Microsoft and LinkedIn","assets/certs/Career_Essentials_in_Administrative_Assistance_Microsoft_LinkedIn.pdf"],
+      ["Real Estate Appraisal","Coursera","assets/certs/Coursera_Real_Estate_Appraisal.pdf"]
     ]
   }
 };

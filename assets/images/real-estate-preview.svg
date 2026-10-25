@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Real Estate Lead Funnel preview</title>
+  <desc id="desc">A light, blue-accented property lead funnel landing page with a headline and narrowing inquiry bars.</desc>
+  <rect width="900" height="560" fill="#f3f6f8"/>
+  <path d="M0 54.5H900" stroke="#d5dde5"/>
+  <text x="90" y="34" fill="#10243e" font-family="Arial,sans-serif" font-size="20" font-weight="700">Ishean</text>
+  <g fill="#10243e" font-family="Arial,sans-serif" font-size="14"><text x="315" y="32">Market data</text><text x="416" y="32">Process</text><text x="490" y="32">Packages</text><text x="582" y="32">FAQ</text></g>
+  <rect x="718" y="11" width="112" height="34" rx="9" fill="#1f5fbf"/><text x="735" y="33" fill="#fff" font-family="Arial,sans-serif" font-size="13" font-weight="700">Get the report</text>
+  <text x="90" y="119" fill="#1f5fbf" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2">REAL ESTATE LEAD FUNNEL · METRO MANILA</text>
+  <g fill="#10243e" font-family="Arial,sans-serif" font-size="51" font-weight="800" letter-spacing="-2"><text x="90" y="188">Turn Manila property</text><text x="90" y="246">inquiries into booked</text><text x="90" y="304">viewings.</text></g>
+  <g fill="#566679" font-family="Arial,sans-serif" font-size="15"><text x="90" y="350">Capture, qualify and follow up every lead so you can</text><text x="90" y="374">focus on buyers who are ready to move forward.</text></g>
+  <rect x="90" y="409" width="180" height="48" rx="9" fill="#1f5fbf"/><text x="109" y="438" fill="#fff" font-family="Arial,sans-serif" font-size="13" font-weight="700">Get the free lead report</text>
+  <rect x="282" y="409" width="144" height="48" rx="9" fill="none" stroke="#10243e" stroke-width="2"/><text x="304" y="438" fill="#10243e" font-family="Arial,sans-serif" font-size="13" font-weight="700">See the numbers</text>
+  <g font-family="Arial,sans-serif" font-weight="700">
+    <rect x="514" y="135" width="300" height="51" rx="9" fill="#10243e"/><text x="531" y="168" fill="#fff" font-size="20">1,000</text><text x="753" y="166" fill="#dbe6f4" font-size="12">INQUIRIES</text>
+    <rect x="543" y="193" width="241" height="51" rx="9" fill="#1b4a8f"/><text x="560" y="226" fill="#fff" font-size="20">420</text><text x="715" y="224" fill="#dbe6f4" font-size="12">QUALIFIED</text>
+    <rect x="575" y="251" width="181" height="51" rx="9" fill="#1f5fbf"/><text x="592" y="284" fill="#fff" font-size="20">180</text><text x="675" y="282" fill="#fff" font-size="12">VIEWINGS</text>
+    <rect x="608" y="309" width="126" height="51" rx="9" fill="#2a9d8f"/><text x="625" y="342" fill="#fff" font-size="20">45</text>
+    <rect x="633" y="367" width="76" height="51" rx="9" fill="#f2b705"/><text x="650" y="400" fill="#10243e" font-size="20">22</text>
+  </g>
+  <text x="515" y="453" fill="#566679" font-family="Arial,sans-serif" font-size="12">INQUIRIES  ·  QUALIFIED  ·  VIEWINGS  ·  RESERVATIONS</text>
+  <path d="M0 532H900" stroke="#d5dde5"/><text x="90" y="550" fill="#566679" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.5">SHANE RAMIREZ · PROJECT CONCEPT</text>
+</svg>

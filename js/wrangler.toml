@@ -4,6 +4,15 @@ compatibility_date = "2026-01-01"
 
 [vars]
 # Your portfolio's origin(s), comma-separated, no trailing slash
-ALLOWED_ORIGIN = "https://YOUR-SITE.example.com"
-# A small, cheap chat model from your OpenAI model list
-OPENAI_MODEL = "gpt-4o-mini"
+ALLOWED_ORIGIN = "https://memonttorrie.github.io"
+# Fast, cost-efficient model; override if a different API model is preferred.
+OPENAI_MODEL = "gpt-6-luna"
+
+[[ratelimits]]
+name = "CHAT_RATE_LIMITER"
+# Choose an unused positive integer for this Cloudflare account if this ID is taken.
+namespace_id = "6842510261"
+
+[ratelimits.simple]
+limit = 8
+period = 60

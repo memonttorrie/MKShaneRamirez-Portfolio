@@ -8,11 +8,14 @@
 <meta name="theme-color" content="#F4F4ED">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.iconify.design" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/refined.css">
+<link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body>
 <div class="progress" id="progress"></div>
@@ -25,13 +28,10 @@
   <path class="ambient-lines__path ambient-lines__path--violet" d="M-170 810 C 100 660, 350 930, 620 800 S 920 660, 1180 850 S 1450 1010, 1590 820"/>
   <path class="ambient-lines__path ambient-lines__path--orange" d="M-150 950 C 120 830, 350 1060, 630 930 S 930 800, 1180 970 S 1430 1110, 1580 960"/>
 </svg>
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"><span id="cursorLabel"></span></div>
-
 <aside class="sidebar" aria-label="Portfolio navigation">
   <a class="sidebar__identity" href="#top">
-    <img src="assets/images/profile-photo.png" alt="" class="sidebar__avatar">
-    <span class="sidebar__name">Shane<br>Ramirez</span>
+    <img src="assets/images/profile-photo.png" alt="" class="sidebar__avatar" width="402" height="392" decoding="async">
+    <span class="sidebar__name"><span>Shane<br>Ramirez</span><svg class="sidebar__verified" viewBox="0 0 24 24" role="img" aria-label="Verified profile"><path class="sidebar__verified-bg" d="M12 1.5 14.5 3l2.9-.4 1.1 2.7 2.7 1.1-.4 2.9 1.7 2.7-1.7 2.7.4 2.9-2.7 1.1-1.1 2.7-2.9-.4L12 22.5l-2.5-1.5-2.9.4-1.1-2.7-2.7-1.1.4-2.9L1.5 12l1.7-2.7-.4-2.9 2.7-1.1 1.1-2.7 2.9.4L12 1.5Z"/><path class="sidebar__verified-check" d="m7.5 12.2 3 3 6.2-6.4"/></svg></span>
     <span class="sidebar__role">Data analyst · Computer engineering</span>
   </a>
   <button class="burger sidebar__menu-toggle" id="burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
@@ -48,46 +48,42 @@
     <a href="#contact"><span aria-hidden="true">✉</span>Contact</a>
   </nav>
   <div class="sidebar__footer">
-    <button class="sidebar__collapse" id="sidebarCollapse" type="button" aria-label="Minimize sidebar" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18m4-12 3 3-3 3"/></svg></button>
     <a class="sidebar__resume" href="resume/Resume_ShaneRamirez.pdf" download>Download resume <span aria-hidden="true">↓</span></a>
+    <button class="sidebar__collapse" id="sidebarCollapse" type="button" aria-label="Minimize sidebar" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18m4-12 3 3-3 3"/></svg></button>
   </div>
 </aside>
-<button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Switch to dark mode">
-  <svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"/></svg>
-  <span>Dark mode</span>
-</button>
-<div class="reading-tools">
-  <button class="reading-tools__toggle" id="fontSizeToggle" type="button" aria-expanded="false" aria-controls="fontSizeMenu" aria-label="Adjust text size">Aᴀ</button>
-  <div class="reading-tools__menu" id="fontSizeMenu" hidden>
-    <span>Text size</span>
-    <button type="button" id="fontSizeDown" aria-label="Decrease text size">−</button>
-    <output id="fontSizeValue">100%</output>
-    <button type="button" id="fontSizeUp" aria-label="Increase text size">+</button>
-  </div>
+<div class="reading-tools" role="group" aria-label="Text size controls">
+  <button class="reading-tools__toggle" id="fontSizeToggle" type="button" aria-expanded="false" aria-controls="fontSizeMenu" aria-label="Adjust text size">Aa</button>
+  <div class="reading-tools__menu" id="fontSizeMenu" hidden><span>Text size</span><button type="button" id="fontSizeDown" aria-label="Decrease text size">−</button><output id="fontSizeValue">100%</output><button type="button" id="fontSizeUp" aria-label="Increase text size">+</button></div>
 </div>
-
 <main id="top" class="site-main">
-<div class="home-topbar"><span class="home-topbar__status"><i></i> OPEN TO INTERNSHIP OPPORTUNITIES</span><a class="home-topbar__contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></div>
+<div class="home-topbar"><span class="home-topbar__status"><i></i> OPEN TO INTERNSHIP OPPORTUNITIES</span><a class="home-topbar__contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a><button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Switch to dark mode"><svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"/></svg><span>Dark mode</span></button></div>
 <section class="daily-tools" aria-label="Tools and platforms I use">
   <span class="daily-tools__label">TOOLS I USE</span>
-  <div class="daily-tools__window"><div class="daily-tools__track" id="toolsTrack"></div></div>
+  <div class="daily-tools__window" tabindex="0"><div class="daily-tools__track" id="toolsTrack"></div></div>
   <p class="sr-only" id="toolsList"></p>
 </section>
 <section class="hero">
+  <svg class="hero__motion-lines" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
+    <path class="hero__line hero__line--one" d="M-40 375 C110 320 152 460 288 390 S420 190 541 245 672 438 798 360 950 205 1075 270 1150 378 1240 300"/>
+    <path class="hero__line hero__line--two" d="M-40 125 C110 60 228 160 330 112 S472 35 585 105 720 215 829 170 1001 70 1120 123 1190 178 1240 150"/>
+    <path class="hero__line hero__line--three" d="M-30 475 C140 420 270 500 386 438 S540 315 660 380 818 492 934 425 1080 310 1240 366"/>
+    <circle class="hero__motion-dot" r="5"><animateMotion dur="19s" repeatCount="indefinite" path="M-40 375 C110 320 152 460 288 390 S420 190 541 245 672 438 798 360 950 205 1075 270 1150 378 1240 300"/></circle>
+  </svg>
   <div class="hero__text">
     <p class="meta reveal-load">Ma. Khrisha Shane Ramirez · Computer Engineering / 2027</p>
-    <h1 class="hero__title" aria-label="Shane Ramirez."><span class="hero__title-line split" data-split>Shane</span><span class="hero__title-line hero__title-line--last split" data-split>Ramirez.</span></h1>
-    <p class="hero__sub reveal-load">Data analytics · Python / SQL / Excel</p>
-    <p class="hero__lead reveal-load">I turn messy data into clear next steps—building practical analytics and machine-learning projects that help people make better decisions.</p>
+    <h1 class="hero__title" aria-label="I turn data into clear decisions."><span class="hero__title-line split" data-split>I turn data into</span><span class="hero__title-line hero__title-line--last split" data-split>clear decisions.</span></h1>
+    <p class="hero__sub reveal-load">DATA ANALYTICS INTERN · PYTHON / SQL / EXCEL</p>
+    <p class="hero__lead reveal-load">I’m a fourth-year Computer Engineering student seeking a data analytics internship. I can help teams prepare data, explore useful patterns, and turn findings into clear next steps using Python, SQL, and Excel.</p>
     <div class="hero__cta reveal-load">
-      <a class="btn" href="resume/Resume_ShaneRamirez.pdf" data-magnetic>Get my resume</a>
-      <a class="btn btn--ghost" href="#projects" data-magnetic>Explore projects</a>
+      <a class="btn" href="resume/Resume_ShaneRamirez.pdf">Get my resume</a>
+      <a class="btn btn--ghost" href="#projects">Explore projects</a>
     </div>
   </div>
   <div class="hero__media reveal-load">
     <div class="hero__portrait-glow" aria-hidden="true"></div>
     <button class="profile-switch" id="profileSwitch" type="button" aria-label="Switch to illustrated profile portrait" aria-pressed="false">
-      <img src="assets/images/profile-photo.png" alt="Portrait of Shane Ramirez" class="hero__img" data-tilt>
+      <img src="assets/images/profile-photo.png" alt="Portrait of Shane Ramirez" class="hero__img" width="402" height="392" fetchpriority="high" decoding="async">
       <span class="profile-switch__hint">CLICK TO SWITCH PORTRAIT <span aria-hidden="true">↻</span></span>
     </button>
     <div class="chip chip--a">Year 04 · Computer Engineering</div>
@@ -122,7 +118,7 @@
   </a>
   <a class="home-tile home-tile--learning" href="#badges">
     <span class="home-tile__icon" aria-hidden="true">✦</span><span class="home-tile__tag">CONTINUOUS LEARNING</span>
-    <h3>11 certificates</h3><p>A growing foundation across data, AI, cloud, and professional skills.</p>
+    <h3>13 certificates</h3><p>A growing foundation across data, AI, cloud, and professional skills.</p>
     <span class="home-tile__link">View certificates <b>↗</b></span>
   </a>
   <a class="home-tile home-tile--journey" href="#experience">
@@ -144,11 +140,12 @@
   <p class="eyebrow">SKILLS &amp; EXPERIENCE</p>
   <h2>Practical skills, built around real questions.</h2>
   <p class="muted skills__intro">A look at the areas I’m studying and applying in projects, coursework, and work experience.</p>
-  <div class="skills-method">
-    <div class="skills-method__intro"><span class="eyebrow">MY APPROACH</span><h3>Ask. Analyze. Explain.</h3><p>Start with a useful question, work carefully with the data, and share what the result can—and cannot—tell us.</p></div>
-    <ol class="skills-method__steps"><li><span>01</span><b>Frame</b><small>Understand the question</small></li><li><span>02</span><b>Explore</b><small>Prepare and analyze data</small></li><li><span>03</span><b>Communicate</b><small>Share clear findings</small></li></ol>
+  <div class="skills-flowchart" id="skillFlow" role="group" aria-label="Skill workflow: prepare data, analyze it, explore a machine-learning or language-processing approach, then communicate findings.">
+    <svg class="skills-flowchart__wires" id="skillFlowWires" aria-hidden="true"><defs><marker id="skillFlowArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="currentColor"/></marker></defs></svg>
+    <div class="skills-grid" id="skillCards"></div>
+    <article class="skills-flowchart__finish" data-flow-node="communicate"><span class="skills-flowchart__step">05 · SHARE</span><b>Communicate findings</b><small>Explain what the result can—and cannot—tell us.</small></article>
   </div>
-  <div class="skills-grid" id="skillCards"></div>
+  <div class="skills-tools" aria-label="Tools used across the workflow"><span class="skills-tools__label">TOOLS SUPPORT EVERY STEP</span><div class="skills-tools__items" id="skillTools"></div></div>
   <p class="skills__note">Skill levels are self-assessed, not formal test scores or a guarantee of commercial service capability.</p>
   <h3 class="mt">Soft skills</h3>
   <div class="soft" id="softSkills"></div>
@@ -166,8 +163,8 @@
     <div><p class="eyebrow">SELECTED WORK</p><h2>Projects built to solve real problems.</h2></div>
     <p class="muted">A closer look at experiments and practical tools I’ve built with data.</p>
   </div>
-  <div class="project-board" data-reveal>
-    <div class="project-board__hint"><span class="arrow-pointer" aria-hidden="true">↘</span> SELECTED PROJECT SNAPSHOTS</div>
+  <div class="project-gallery" data-reveal>
+    <div class="project-gallery__bar"><span>PROJECT ARCHIVE · 01—09</span><span>RESEARCH / BUILDS / EXPERIMENTS</span></div>
     <div class="grid" id="projectGrid"></div>
   </div>
 </section>
@@ -185,7 +182,17 @@
 </section>
 
 <section id="experience" class="section" data-reveal>
-  <h2>Experience</h2>
+  <div class="section__heading" data-reveal>
+    <div><p class="eyebrow">CAREER JOURNEY</p><h2>Experience</h2></div>
+    <p class="muted">The people, teams, and places that shaped how I work.</p>
+  </div>
+  <div class="company-showcase" aria-label="Companies I have worked with">
+    <div class="company-showcase__label"><span>COMPANIES I’VE WORKED WITH</span><span>MOVE POINTER OR SWIPE SIDEWAYS</span></div>
+    <div class="company-showcase__viewport" id="companyShowcase" tabindex="0" role="group" aria-label="Interactive company logo strip. Move the pointer left or right to move the logos in the opposite direction.">
+      <div class="company-showcase__track" id="companyTrack"></div>
+    </div>
+    <ul class="sr-only" id="companyList"></ul>
+  </div>
   <ol class="timeline" id="timeline"></ol>
 </section>
 
@@ -202,11 +209,33 @@
 </section>
 
 <section id="contact" class="section contact" data-reveal>
+  <div class="contact-new">
+    <header class="contact-new__heading"><p class="eyebrow">FAQS / CONTACT</p><h2>Work worth doing. Tools worth building.</h2><p class="lead">I’m looking for a data analytics internship where I can contribute, keep learning, and help turn questions into clear next steps.</p></header>
+    <div class="contact-new__layout">
+      <aside class="contact-new__faq" aria-labelledby="contactFaqTitle"><p class="eyebrow">QUICK ANSWERS</p><h3 id="contactFaqTitle">A few things you might be wondering.</h3>
+        <div class="contact-new__questions">
+          <details open><summary>What kind of opportunity are you looking for?</summary><p>I’m open to data analytics internships. I’m a Year 4 Computer Engineering student graduating in 2027, and I’m especially interested in Python, SQL, Excel, and machine learning.</p></details>
+          <details><summary>What projects can I look at?</summary><p>The portfolio includes data analysis and machine-learning projects such as Taglish NLP, waste image classification, student performance prediction, and interactive funnel concepts. They show how I approach practical questions through coursework and personal work.</p></details>
+          <details><summary>Which tools do you use?</summary><p>My listed tools include Python, SQL/MySQL, Excel, Power BI, scikit-learn, PyTorch, and Hugging Face. I’m continuing to build experience through projects and coursework.</p></details>
+          <details><summary>Where are you based?</summary><p>I’m based in Pasig, Philippines. For scheduling or other details, please reach out directly through LinkedIn.</p></details>
+        </div>
+        <a class="contact-new__linkedin" href="https://www.linkedin.com/in/shaneramirezva" target="_blank" rel="noopener noreferrer">↗ &nbsp; Message me on LinkedIn</a>
+        <a class="btn btn--ghost contact-new__resume" href="resume/Resume_ShaneRamirez.pdf" download>Get my resume <span aria-hidden="true">↓</span></a>
+      </aside>
+      <form class="contact-new__form" id="inquiryForm">
+        <div class="contact-new__names"><label>First name<input name="firstName" autocomplete="given-name" placeholder="Your first name" required></label><label>Last name<input name="lastName" autocomplete="family-name" placeholder="Your last name"></label></div>
+        <label>Email<input type="email" name="email" autocomplete="email" placeholder="you@company.com" required></label>
+        <label>Tell me a little about your inquiry<textarea name="message" rows="7" maxlength="3000" placeholder="What role, project, or question is on your mind?" required></textarea></label>
+        <div class="contact-new__submit"><button class="btn" type="submit">Prepare inquiry <span aria-hidden="true">↗</span></button><p>If email isn’t configured, you can reach me on LinkedIn.</p></div>
+        <p class="contact-new__status" id="inquiryStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
   <h2>Let’s work together</h2>
   <p class="lead">I’m looking for an internship where I can contribute, keep learning, and work with people who care about using data well.</p>
   <div class="hero__cta">
-    <a class="btn" href="mailto:you@example.com" data-magnetic>Email me</a>
-    <a class="btn btn--ghost" href="resume/Resume_ShaneRamirez.pdf" data-magnetic>Download resume</a>
+    <a class="btn" href="mailto:you@example.com">Email me</a>
+    <a class="btn btn--ghost" href="resume/Resume_ShaneRamirez.pdf">Download resume</a>
   </div>
   <ul class="socials">
     <li><a href="https://www.linkedin.com/in/shaneramirezva" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.6H2V22h3.1V8.6ZM3.6 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM22 13.9c0-4-2.1-5.8-4.9-5.8a4.2 4.2 0 0 0-3.8 2.1V8.6h-3V22h3.1v-6.6c0-1.7.3-3.4 2.5-3.4s2.2 2 2.2 3.5V22H22v-8.1Z"/></svg></a></li>
@@ -218,7 +247,7 @@
 </main>
 
 <footer class="footer">© Ma. Khrisha Shane Ramirez · Pasig City, Philippines</footer>
-<button class="chat-launcher chat-launcher--floating" id="chatLauncher" type="button" aria-label="Chat with Moana" aria-expanded="false"><span class="chat-launcher__prompt" id="chatPrompt">How can I help?</span><span class="chat-launcher__icon"><img src="assets/images/moana-help.png" alt=""><i></i></span></button>
+<button class="chat-launcher chat-launcher--floating" id="chatLauncher" type="button" aria-label="Chat with Moana" aria-expanded="false"><span class="chat-launcher__prompt" id="chatPrompt">How can I help?</span><span class="chat-launcher__icon"><img src="assets/images/moana-help.png" alt="" width="392" height="392" loading="lazy" decoding="async"><i></i></span></button>
 
 <div class="cert-modal" id="certModal" hidden>
   <div class="cert-modal__panel" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
@@ -231,26 +260,25 @@
   </div>
 </div>
 
-<section class="chat-panel" id="chatPanel" aria-label="Chat with Moana" aria-hidden="true" hidden>
-  <header class="chat-panel__header"><img class="chat-panel__avatar" src="assets/images/moana-help.png" alt=""><div><b>Moana</b><span><i></i> Portfolio guide · FAQ</span></div><button id="chatClose" type="button" aria-label="Close chat">×</button></header>
-  <div class="chat-panel__faqs">
-    <p>QUICK FAQs</p>
-    <details><summary>What can Shane help with?</summary><p>Shane is building experience in analytics, data preparation, Python, SQL, Excel, and machine-learning projects. See the portfolio and contact section to discuss a specific need.</p></details>
-    <details><summary>Could Shane help my business?</summary><p>It depends on the problem and scope. The chat can ask a few questions and point you to relevant experience, but it cannot promise a business outcome.</p></details>
-    <details><summary>What tools has Shane used?</summary><p>Projects and coursework include Python, pandas, scikit-learn, SQL, Excel, PyTorch, Matplotlib, and Power BI.</p></details>
-  </div>
-  <div class="chat-panel__messages" id="chatMessages" aria-live="polite"><div class="chat-message chat-message--bot">Hi! I’m Moana, a guided portfolio assistant. Ask about Shane’s work, or tell me about your business and I’ll ask a few questions to help assess fit.</div><div class="chat-suggestions"><button type="button">Could Shane help my business?</button><button type="button">What projects has Shane built?</button></div></div>
-  <form class="chat-panel__form" id="chatForm"><label class="sr-only" for="chatInput">Ask Moana a question</label><input id="chatInput" name="question" placeholder="Ask a question..." autocomplete="off" required><button type="submit" aria-label="Send message">↑</button></form>
-  <p class="chat-panel__disclaimer">Guided FAQ assistant, not generative AI. Messages aren’t stored.</p>
+<section class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-labelledby="chatTitle" aria-hidden="true" hidden>
+  <header class="chat-panel__header"><img class="chat-panel__avatar" src="assets/images/moana-help.png" alt="" width="392" height="392" loading="lazy" decoding="async"><div><b id="chatTitle">Moana</b><span><i></i> AI portfolio assistant</span></div><button id="chatClose" type="button" aria-label="Close chat">×</button></header>
+  <div class="chat-panel__messages" id="chatMessages" aria-live="polite" aria-relevant="additions text"><div class="chat-message chat-message--bot">Hi, I’m Moana. Ask me about Shane’s work, skills, or internship interests. If I need more context, I’ll ask one quick question.</div><div class="chat-suggestions" aria-label="Suggested questions"><button type="button">What projects have you built?</button><button type="button">What tools do you use?</button><button type="button">Are you open to internships?</button><button type="button">How can I contact you?</button></div></div>
+  <form class="chat-panel__form" id="chatForm"><label class="sr-only" for="chatInput">Ask Moana a question</label><input id="chatInput" name="question" maxlength="1400" placeholder="Ask a question..." autocomplete="off" required><button type="submit" aria-label="Send message">↑</button></form>
+  <p class="chat-panel__disclaimer">AI assistant. Answers may not always be accurate.</p>
 </div>
 
 <script src="js/accessibility.js"></script>
 <script src="js/data.js"></script>
 <script src="js/theme.js"></script>
-<script src="js/cursor.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/ambient-lines.js"></script>
+<script src="js/company-strip.js"></script>
 <script src="js/render.js"></script>
 <script src="js/main.js"></script>
+<script type="module" src="js/knowledge.js"></script>
 <script src="js/chatbot.js"></script>
+<script src="js/inquiry.js"></script>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div><div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel"></span></div>
+<script src="js/cursor.js"></script>
 </body>
 </html>

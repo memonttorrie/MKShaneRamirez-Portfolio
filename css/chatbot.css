@@ -1,0 +1,24 @@
+/* Chat-only refinements; the rest of the site keeps its existing design. */
+.chat-panel__messages{scrollbar-gutter:stable;overscroll-behavior:contain}
+.chat-message--enter{animation:chatMessageEnter .22s ease-out both}
+.chat-message__actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chat-message__actions a{display:inline-flex;align-items:center;min-height:34px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--accent);font-size:.75rem;font-weight:700;text-decoration:none}
+.chat-message__actions a:hover{border-color:var(--accent);background:var(--surface-soft)}
+.chat-suggestions{gap:8px}
+.chat-suggestions button{flex:1 1 calc(50% - 8px);min-height:38px;border-radius:11px;text-align:left;line-height:1.35}
+.chat-followup{display:grid;gap:7px;margin-top:10px;padding-top:9px;border-top:1px solid var(--line)}
+.chat-followup>p{margin:0;color:var(--muted);font-size:.72rem;font-weight:700;line-height:1.4}
+.chat-followup__options{display:flex;flex-wrap:wrap;gap:6px}
+.chat-followup__options button{min-height:32px;padding:6px 9px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:600 .7rem/1.3 var(--font-body);text-align:left;cursor:pointer;transition:border-color .18s var(--ease),background-color .18s var(--ease),color .18s var(--ease),transform .18s var(--ease)}
+.chat-followup__options button:hover{transform:translateY(-1px);border-color:var(--accent);background:var(--surface-soft);color:var(--accent)}
+.chat-followup__options button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chat-panel__disclaimer{font-size:.68rem}
+@keyframes chatMessageEnter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:560px){
+  .chat-panel{left:8px;right:8px;bottom:96px;width:auto;height:min(72dvh,640px);max-height:calc(100dvh - 112px);border-radius:20px}
+  .chat-panel__messages{padding:12px}
+  .chat-message{max-width:94%;font-size:.86rem}
+  .chat-suggestions button{flex-basis:100%;min-height:34px}
+  .chat-followup__options button{flex:1 1 calc(50% - 6px)}
+}
+@media(prefers-reduced-motion:reduce){.chat-message--enter{animation:none}}

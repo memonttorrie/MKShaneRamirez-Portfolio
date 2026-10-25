@@ -1,18 +1,14 @@
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
-@keyframes charIn{from{opacity:0;transform:translateY(60%) rotate(4deg)}to{opacity:1;transform:none}}
-@keyframes portraitGlow{to{filter:blur(26px) hue-rotate(360deg)}}
-@keyframes portraitSwap{from{opacity:.25;filter:blur(5px);transform:scale(.96)}to{opacity:1;filter:none;transform:none}}
-@keyframes themeWipe{from{clip-path:circle(0 at 50% 50%)}to{clip-path:circle(150vmax at 50% 50%)}}
-::view-transition-old(root){animation:none}
-::view-transition-new(root){animation:themeWipe .7s cubic-bezier(.2,.75,.18,1) both}
-.reveal-load{opacity:0;animation:fadeUp .9s var(--ease) forwards;animation-delay:calc(.5s + var(--i,0) * .12s)}
-.split .ch{opacity:0;animation:charIn .8s var(--ease) forwards;animation-delay:calc(.05s + var(--c) * .04s)}
-[data-reveal]{opacity:0;transform:translateY(32px);transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+@keyframes portraitSwap{from{opacity:.55;transform:scale(.98)}to{opacity:1;transform:none}}
+@keyframes toolsMarquee{to{transform:translateX(-50%)}}
+@keyframes typingDot{to{opacity:.3;transform:translateY(-3px)}}
+.reveal-load{opacity:0;animation:fadeUp .6s var(--ease) both;animation-delay:calc(.08s + min(var(--i,0),5) * .055s)}
+[data-reveal]{opacity:0;transform:translate3d(0,14px,0);transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:var(--reveal-delay,0ms)}
 [data-reveal].in{opacity:1;transform:none}
+.hero__img.is-switching{animation:portraitSwap .42s var(--ease) both}
 @media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
- [data-reveal],.reveal-load,.split .ch{opacity:1;transform:none}
- html{scroll-behavior:auto}
- .hero__portrait-glow{animation:none}
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  [data-reveal],.reveal-load{opacity:1;transform:none}
+  .daily-tools__track{animation:none!important}
 }

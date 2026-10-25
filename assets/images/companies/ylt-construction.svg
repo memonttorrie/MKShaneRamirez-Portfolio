@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 110" role="img" aria-labelledby="title">
+  <title id="title">YLT Construction Services</title>
+  <g fill="none" stroke="#15258c" stroke-width="7" stroke-linejoin="miter">
+    <path d="M14 88V52L66 9l53 43v36M29 88V59l37-31 38 31v29"/>
+    <path d="M10 99h408" stroke-width="3"/>
+  </g>
+  <text x="133" y="73" fill="#101010" font-family="Arial,sans-serif" font-size="62" font-weight="800" letter-spacing="-2">YLT</text>
+  <text x="239" y="53" fill="#101010" font-family="Arial,sans-serif" font-size="24" font-weight="800" letter-spacing=".2">CONSTRUCTION</text>
+  <text x="281" y="77" fill="#333" font-family="Arial,sans-serif" font-size="16" letter-spacing="4">SERVICES</text>
+</svg>

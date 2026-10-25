@@ -5,16 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const list = $('#stageList');
   const stages = data.stages;
 
-  Anim.split($('[data-split]'));
   document.querySelectorAll('.reveal-load').forEach((element, index) => element.style.setProperty('--i', index));
   Anim.reveal();
-  Anim.magnetic();
 
   nav.innerHTML = stages.map(([title], index) =>
     `<li><button type="button" data-stage="${index}" class="${index === 0 ? 'is-active' : ''}">${String(index + 1).padStart(2, '0')} · ${title}</button></li>`
   ).join('');
   list.innerHTML = stages.map(([title, description, tags], index) =>
-    `<article class="fw-stage" id="stage-${index}" data-stage-card="${index}"><div class="fw-stage__top"><span class="fw-stage__number">${String(index + 1).padStart(2, '0')}</span><h3>${title}</h3></div><p>${description}</p><div class="fw-stage__meta">${tags.map(tag => `<span>${tag}</span>`).join('')}</div></article>`
+    `<article class="fw-stage" id="stage-${index}" data-stage-card="${index}" data-reveal><div class="fw-stage__top"><span class="fw-stage__number">${String(index + 1).padStart(2, '0')}</span><h3>${title}</h3></div><p>${description}</p><div class="fw-stage__meta">${tags.map(tag => `<span>${tag}</span>`).join('')}</div></article>`
   ).join('');
 
   nav.addEventListener('click', event => {
@@ -29,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!entry.isIntersecting) return;
       const index = Number(entry.target.dataset.stageCard);
       stageButtons.forEach((button, buttonIndex) => button.classList.toggle('is-active', buttonIndex === index));
-      $('#stageProg').style.width = `${((index + 1) / stages.length) * 100}%`;
+      $('#stageProg').style.transform = `scaleX(${(index + 1) / stages.length})`;
     });
   }, {rootMargin: '-35% 0px -50% 0px'});
   list.querySelectorAll('.fw-stage').forEach(stage => stageObserver.observe(stage));

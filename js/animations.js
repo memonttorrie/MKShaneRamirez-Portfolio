@@ -1,17 +1,50 @@
-window.Anim = {
-  split(elements){ const list = elements instanceof Element ? [elements] : [...elements]; list.forEach(el => { const t = el.textContent; el.textContent = ''; [...t].forEach((c,i) => { const s = document.createElement('span'); s.className='ch'; s.style.setProperty('--c',i); s.textContent = c === ' ' ? '\u00A0' : c; el.appendChild(s); }); }); },
-  reveal(){ const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); e.target.querySelectorAll('.bar__fill').forEach(b => b.style.width = b.dataset.w + '%'); } }), {threshold:.12});
-    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el)); },
-  counters(){ const io = new IntersectionObserver(es => es.forEach(e => { if(!e.isIntersecting) return; io.unobserve(e.target);
-      const el = e.target, end = +el.dataset.count, suf = el.dataset.suffix || '', t0 = performance.now();
-      (function tick(t){ const p = Math.min((t-t0)/1500,1), v = Math.round(end*(1-Math.pow(1-p,3))); el.textContent = v.toLocaleString() + suf; if(p<1) requestAnimationFrame(tick); })(t0); }), {threshold:.6});
-    document.querySelectorAll('[data-count]').forEach(el => io.observe(el)); },
-  tilt(){ if(!matchMedia('(hover:hover)').matches) return;
-    document.querySelectorAll('[data-tilt],.card').forEach(el => {
-      el.addEventListener('mousemove', e => { const r = el.getBoundingClientRect(), px = (e.clientX-r.left)/r.width-.5, py = (e.clientY-r.top)/r.height-.5; el.style.transform = `perspective(800px) rotateY(${px*8}deg) rotateX(${-py*8}deg) translateY(-4px)`; });
-      el.addEventListener('mouseleave', () => el.style.transform = ''); }); },
-  magnetic(){ if(!matchMedia('(hover:hover)').matches) return;
-    document.querySelectorAll('[data-magnetic]').forEach(el => {
-      el.addEventListener('mousemove', e => { const r = el.getBoundingClientRect(); el.style.transform = `translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.4}px)`; });
-      el.addEventListener('mouseleave', () => el.style.transform = ''); }); }
-};
+(() => {
+  const observed = new WeakSet();
+  const reduceMotion = matchMedia('(prefers-reduced-motion:reduce)');
+  const revealObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const element = entry.target;
+      element.classList.add('in');
+      element.querySelectorAll('.bar__fill').forEach(bar => { bar.style.transform = `scaleX(${Number(bar.dataset.w) / 100})`; });
+      revealObserver.unobserve(element);
+    }), {threshold:.12, rootMargin:'0px 0px -3% 0px'})
+    : null;
+
+  window.Anim = {
+    reveal(){
+      document.querySelectorAll('main section:not(.hero),[data-reveal]').forEach(element => {
+        if (!element.hasAttribute('data-reveal')) element.setAttribute('data-reveal','');
+        if (observed.has(element)) return;
+        observed.add(element);
+        const siblings = [...element.parentElement.children].filter(sibling => sibling.hasAttribute('data-reveal'));
+        const index = siblings.indexOf(element);
+        if (siblings.length > 1) element.style.setProperty('--reveal-delay', `${Math.min(index,5)*55}ms`);
+        if (!revealObserver || reduceMotion.matches) {
+          element.classList.add('in');
+          element.querySelectorAll('.bar__fill').forEach(bar => { bar.style.transform = `scaleX(${Number(bar.dataset.w) / 100})`; });
+        } else revealObserver.observe(element);
+      });
+    },
+    counters(){
+      const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        const element = entry.target, end = Number(element.dataset.count), suffix = element.dataset.suffix || '';
+        if (reduceMotion.matches) { element.textContent = end.toLocaleString() + suffix; return; }
+        const started = performance.now();
+        const tick = now => {
+          const progress = Math.min((now - started) / 900, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = Math.round(end * eased).toLocaleString() + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }), {threshold:.6}) : null;
+      document.querySelectorAll('[data-count]').forEach(element => {
+        if (!observer || reduceMotion.matches) element.textContent = Number(element.dataset.count).toLocaleString() + (element.dataset.suffix || '');
+        else observer.observe(element);
+      });
+    }
+  };
+})();
