@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skills &amp; Working Framework | Shane Ramirez</title>
+<meta name="description" content="Explore Shane Ramirez's data analytics, data preparation, visualization, and machine-learning interests and how each project moves from question to insight.">
+<meta name="theme-color" content="#F4F4ED">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/framework.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<svg class="ambient-lines" viewBox="0 0 1440 1000" preserveAspectRatio="none" aria-hidden="true">
+  <path class="ambient-lines__path ambient-lines__path--blue" d="M-150 110 C 100 260, 320 30, 550 170 S 900 290, 1110 140 S 1420 50, 1580 210"/>
+  <path class="ambient-lines__path ambient-lines__path--orange" d="M-150 230 C 180 80, 310 390, 610 250 S 920 60, 1160 230 S 1440 430, 1580 270"/>
+  <path class="ambient-lines__path ambient-lines__path--violet" d="M-160 390 C 110 520, 340 260, 590 390 S 900 530, 1160 360 S 1440 280, 1580 470"/>
+  <path class="ambient-lines__path ambient-lines__path--orange" d="M-160 520 C 130 350, 330 650, 620 520 S 920 350, 1170 550 S 1430 730, 1580 540"/>
+  <path class="ambient-lines__path ambient-lines__path--blue" d="M-150 680 C 100 820, 330 570, 600 700 S 900 830, 1160 650 S 1420 570, 1580 760"/>
+  <path class="ambient-lines__path ambient-lines__path--violet" d="M-170 810 C 100 660, 350 930, 620 800 S 920 660, 1180 850 S 1450 1010, 1590 820"/>
+  <path class="ambient-lines__path ambient-lines__path--orange" d="M-150 950 C 120 830, 350 1060, 630 930 S 930 800, 1180 970 S 1430 1110, 1580 960"/>
+</svg>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"><span id="cursorLabel"></span></div>
+
+<aside class="sidebar" aria-label="Portfolio navigation">
+  <a class="sidebar__identity" href="index.html">
+    <img src="assets/images/profile-photo.png" alt="" class="sidebar__avatar">
+    <span class="sidebar__name">Shane<br>Ramirez</span>
+    <span class="sidebar__role">Data analyst · Computer engineering</span>
+  </a>
+  <button class="burger sidebar__menu-toggle" id="burger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+  <nav class="nav__links" id="navLinks" aria-label="Portfolio sections">
+    <a href="index.html"><span aria-hidden="true">⌂</span>Portfolio home</a>
+    <a href="#loop"><span aria-hidden="true">↻</span>Workflow loop</a>
+    <a href="#stages"><span aria-hidden="true">▤</span>Project stages</a>
+    <a href="#expertise"><span aria-hidden="true">✳</span>Skills &amp; expertise</a>
+    <a href="index.html#projects"><span aria-hidden="true">▧</span>Projects</a>
+    <a href="index.html#badges"><span aria-hidden="true">✦</span>Certifications</a>
+    <a href="index.html#contact"><span aria-hidden="true">✉</span>Contact</a>
+  </nav>
+  <div class="sidebar__footer">
+    <button class="sidebar__collapse" id="sidebarCollapse" type="button" aria-label="Minimize sidebar" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18m4-12 3 3-3 3"/></svg></button>
+    <a class="sidebar__resume" href="resume/Resume_ShaneRamirez.pdf" download>Download resume <span aria-hidden="true">↓</span></a>
+  </div>
+</aside>
+<button class="theme-toggle theme-toggle--floating" id="themeToggle" aria-label="Switch to dark mode"><svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"/></svg><span>Dark mode</span></button>
+<div class="reading-tools">
+  <button class="reading-tools__toggle" id="fontSizeToggle" type="button" aria-expanded="false" aria-controls="fontSizeMenu" aria-label="Adjust text size">Aᴀ</button>
+  <div class="reading-tools__menu" id="fontSizeMenu" hidden><span>Text size</span><button type="button" id="fontSizeDown" aria-label="Decrease text size">−</button><output id="fontSizeValue">100%</output><button type="button" id="fontSizeUp" aria-label="Increase text size">+</button></div>
+</div>
+
+<main id="top" class="site-main">
+<section class="fw-hero">
+  <p class="meta reveal-load">Skills · areas of interest · project approach</p>
+  <h1 class="hero__title"><span class="split" data-split>How I turn questions into useful insights.</span></h1>
+  <p class="hero__lead reveal-load">A practical, repeatable workflow for understanding a problem, preparing data, exploring possible answers, and communicating what the results mean.</p>
+  <div class="hero__cta reveal-load">
+    <a class="btn" href="#stages" data-magnetic>Explore my workflow</a>
+    <a class="btn btn--ghost" href="#expertise" data-magnetic>View areas of expertise</a>
+  </div>
+</section>
+
+<section id="loop" class="section" data-reveal>
+  <p class="eyebrow">A REPEATABLE APPROACH</p>
+  <h2>The learning loop</h2>
+  <p class="muted">Select a step to see how it connects to the next.</p>
+  <div class="loop" id="loop-ring"></div>
+  <p class="loop__note" id="loopNote" aria-live="polite">Choose a step to explore my process.</p>
+</section>
+
+<section id="stages" class="section fw-layout">
+  <div class="fw-section-heading"><p class="eyebrow">FROM QUESTION TO NEXT STEP</p><h2>How I work through a project</h2><p class="muted">The tools change with the problem; this keeps the work focused and understandable.</p></div>
+  <aside class="fw-side"><ol id="stageNav"></ol><div class="fw-prog"><i id="stageProg"></i></div></aside>
+  <div class="fw-stages" id="stageList"></div>
+</section>
+
+<section id="expertise" class="section" data-reveal>
+  <p class="eyebrow">WHAT I’M BUILDING EXPERIENCE IN</p>
+  <h2>Skills and areas of expertise</h2>
+  <p class="muted fw-intro">These are areas I’ve studied and applied in coursework, personal projects, or professional experience—not a list of promised commercial services.</p>
+  <div class="expertise-grid" id="expertiseGrid"></div>
+</section>
+
+<section class="section contact" data-reveal>
+  <h2>Let’s learn and build together.</h2>
+  <p class="lead">I’m looking for an internship where I can contribute my analytical mindset, collaborate with a team, and keep growing my technical skills.</p>
+  <div class="hero__cta"><a class="btn" href="index.html#contact" data-magnetic>Get in touch</a><a class="btn btn--ghost" href="index.html#projects" data-magnetic>See project work</a></div>
+</section>
+</main>
+<footer class="footer">© Ma. Khrisha Shane Ramirez · Pasig City, Philippines</footer>
+<div class="toast" id="toast" role="status"></div>
+<button class="chat-launcher chat-launcher--floating" id="chatLauncher" type="button" aria-label="Chat with Moana" aria-expanded="false"><span class="chat-launcher__prompt" id="chatPrompt">How can I help?</span><span class="chat-launcher__icon"><img src="assets/images/moana-help.png" alt=""><i></i></span></button>
+<section class="chat-panel" id="chatPanel" aria-label="Chat with Moana" aria-hidden="true" hidden>
+  <header class="chat-panel__header"><img class="chat-panel__avatar" src="assets/images/moana-help.png" alt=""><div><b>Moana</b><span><i></i> Portfolio guide · FAQ</span></div><button id="chatClose" type="button" aria-label="Close chat">×</button></header>
+  <div class="chat-panel__faqs">
+    <p>QUICK FAQs</p>
+    <details><summary>What can Shane help with?</summary><p>Shane is building experience in analytics, data preparation, Python, SQL, Excel, and machine-learning projects. See the portfolio and contact section to discuss a specific need.</p></details>
+    <details><summary>Could Shane help my business?</summary><p>It depends on the problem and scope. The chat can ask a few questions and point you to relevant experience, but it cannot promise a business outcome.</p></details>
+    <details><summary>What tools has Shane used?</summary><p>Projects and coursework include Python, pandas, scikit-learn, SQL, Excel, PyTorch, Matplotlib, and Power BI.</p></details>
+  </div>
+  <div class="chat-panel__messages" id="chatMessages" aria-live="polite"><div class="chat-message chat-message--bot">Hi! I’m Moana, a guided portfolio assistant. Ask about Shane’s work, or tell me about your business and I’ll ask a few questions to help assess fit.</div><div class="chat-suggestions"><button type="button">Could Shane help my business?</button><button type="button">What projects has Shane built?</button></div></div>
+  <form class="chat-panel__form" id="chatForm"><label class="sr-only" for="chatInput">Ask Moana a question</label><input id="chatInput" name="question" placeholder="Ask a question..." autocomplete="off" required><button type="submit" aria-label="Send message">↑</button></form>
+  <p class="chat-panel__disclaimer">Guided FAQ assistant, not generative AI. Messages aren’t stored.</p>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/data.js"></script>
+<script src="js/framework-data.js"></script>
+<script src="js/framework.js"></script>
+<script src="js/accessibility.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
