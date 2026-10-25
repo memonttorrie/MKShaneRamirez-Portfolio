@@ -1,0 +1,15 @@
+/* Single place to tune the look. Replace values to match your reference exactly. */
+:root{
+  --bg:#F5F6F2; --surface:#FFFFFF; --ink:#10203C; --muted:#68778D; --line:#DCE2E8;
+  --accent:#1468C5; --accent-ink:#FFFFFF; --surface-soft:#EDF3FF;
+  --orange:#F07824; --violet:#7556D8; --blue:#1677D2; --black:#101827;
+  --font-display:'Bricolage Grotesque',system-ui,sans-serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --radius:16px; --ease:cubic-bezier(.22,.8,.2,1); --dur:.7s;
+  --max:1120px; --pad:clamp(20px,5vw,56px); --sidebar-width:286px; --sidebar-collapsed-width:82px;
+}
+[data-theme="dark"]{
+  --bg:#101827; --surface:#172338; --ink:#F0F4FB; --muted:#9CAAC1; --line:#2A3850;
+  --accent:#77B8FF; --accent-ink:#10203C; --surface-soft:#1C2D49;
+  --orange:#FF9952; --violet:#A48BFF; --blue:#67ACFF; --black:#080E1A;
+}

@@ -1,0 +1,18 @@
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes charIn{from{opacity:0;transform:translateY(60%) rotate(4deg)}to{opacity:1;transform:none}}
+@keyframes portraitGlow{to{filter:blur(26px) hue-rotate(360deg)}}
+@keyframes portraitSwap{from{opacity:.25;filter:blur(5px);transform:scale(.96)}to{opacity:1;filter:none;transform:none}}
+@keyframes themeWipe{from{clip-path:circle(0 at 50% 50%)}to{clip-path:circle(150vmax at 50% 50%)}}
+::view-transition-old(root){animation:none}
+::view-transition-new(root){animation:themeWipe .7s cubic-bezier(.2,.75,.18,1) both}
+.reveal-load{opacity:0;animation:fadeUp .9s var(--ease) forwards;animation-delay:calc(.5s + var(--i,0) * .12s)}
+.split .ch{opacity:0;animation:charIn .8s var(--ease) forwards;animation-delay:calc(.05s + var(--c) * .04s)}
+[data-reveal]{opacity:0;transform:translateY(32px);transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+ [data-reveal],.reveal-load,.split .ch{opacity:1;transform:none}
+ html{scroll-behavior:auto}
+ .hero__portrait-glow{animation:none}
+}

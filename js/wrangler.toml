@@ -1,0 +1,9 @@
+name = "moana-chat"
+main = "index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+# Your portfolio's origin(s), comma-separated, no trailing slash
+ALLOWED_ORIGIN = "https://YOUR-SITE.example.com"
+# A small, cheap chat model from your OpenAI model list
+OPENAI_MODEL = "gpt-4o-mini"
